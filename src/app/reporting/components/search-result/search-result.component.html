@@ -1,0 +1,21 @@
+<table class="custom-table">
+    <thead>
+        <tr>
+            <th>Date Completed</th>
+            <th>Content</th>
+            <th>Type</th>
+            <th>Skill Result</th>
+            <th>Time Spent</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of tableData">
+            <td>{{ item.dateCompleted }}</td>
+            <td>{{ item.content }}</td>
+            <td>{{ item.type }}</td>
+            <!-- <td><ng-container *appCustomDirective="item.skillResult"></ng-container></td> -->
+            <td>{{ item.timeSpent }}</td>
+            <td>{{ item.timeSpent }}</td>
+        </tr>
+    </tbody>
+</table>

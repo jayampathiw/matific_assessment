@@ -1,0 +1,18 @@
+label, span {
+    font-size: 13px;
+}
+
+.search-container {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.data-dropdown {
+    min-width: 200px;
+    min-height: 25px;
+    border-color: lightgray;
+    border-radius: 5px;
+    margin-top: 10px;
+}

@@ -1,0 +1,21 @@
+.reporting-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    height: 100dvh;
+    background-color: lightgray;
+}
+
+.content {
+    min-width: 60%;
+    background-color: white;
+    padding-top: 50px;
+}
+
+.search, .search-results {
+    padding: 5px 30px;
+}
+
+.progress {
+    padding: 50px 150px;
+}

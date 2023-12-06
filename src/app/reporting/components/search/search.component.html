@@ -1,0 +1,27 @@
+<div class="search-container">
+        <div>
+            <label>Class</label><br>
+            <select class="data-dropdown" (change)="onValueChange()">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+            </select>
+        </div>
+        
+        <div>
+            <label>Student</label><br>
+            <select class="data-dropdown" (change)="onValueChange()">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+            </select>
+        </div>
+        
+
+        <div>
+            <label>Date Range</label><br>
+            <div class="datepickers">
+                <input type="date" class="date-input" (change)="onValueChange()" /> <span> To </span>
+                <input type="date" class="date-input" (change)="onValueChange()" />
+            </div>
+        </div>
+    
+</div>
