@@ -1,0 +1,33 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+    <label for="firstName">First Name:</label><br>
+    <input type="text" formControlName="firstName"><br>
+  
+    <label for="lastName">Last Name:</label><br>
+    <input type="text" formControlName="lastName"><br>
+  
+    <label for="address">Address:</label><br>
+    <input type="text" formControlName="address"><br>
+  
+    <label for="telephone">Telephone:</label><br>
+    <input type="text" formControlName="telephone"><br>
+  
+    <label for="email">Email:</label><br>
+    <input type="email" formControlName="email"><br>
+  
+    <label for="username">Username:</label><br>
+    <input type="text" formControlName="username"><br>
+  
+    <label for="password">Password:</label><br>
+    <input type="password" formControlName="password"><br>
+  
+    <label for="confirmPassword">Retype Password:</label><br>
+    <input type="password" formControlName="confirmPassword"><br><br>
+    <!-- <div *ngIf="registerForm.errors?.mismatch && registerForm.get('confirmPassword')?.touched">
+        Passwords do not match.
+      </div> -->
+  
+    <button type="submit" [disabled]="!registerForm.valid">Register</button>
+  
+  </form>
+  

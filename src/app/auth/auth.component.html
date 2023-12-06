@@ -1,0 +1,20 @@
+<div class="main-container">
+    <div class="tab-container">
+        <div class="tab">
+            <button class="tablinks" (click)="openTab('login')" [ngClass]="{'active': activeTab === 'login'}">Login</button>
+            <button class="tablinks" (click)="openTab('register')" [ngClass]="{'active': activeTab === 'register'}">Register</button>
+        </div>
+        
+        <div [ngClass]="{'tabcontent': true, 'hide': activeTab !== 'login'}">
+            <h3>Login</h3>
+            <app-login></app-login>
+        </div>
+        
+        <div [ngClass]="{'tabcontent': true, 'hide': activeTab !== 'register'}">
+            <h3>Register</h3>
+            <app-registration></app-registration>
+        </div>
+    </div>
+</div>
+
+
