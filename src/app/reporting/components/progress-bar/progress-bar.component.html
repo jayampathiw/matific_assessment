@@ -1,15 +1,15 @@
-<div class="progress-bar-container">
-    <span class="progress-item unassigned" [ngStyle]="{'width': '10%' }"></span>
-    <span class="progress-item weak" [ngStyle]="{'width': '20%' }"></span>
-    <span class="progress-item ok" [ngStyle]="{'width': '10%' }"></span>
-    <span class="progress-item good" [ngStyle]="{'width': '30%' }"></span>
-    <span class="progress-item excellent" [ngStyle]="{'width': '30%' }"></span>
+<div class="progress-bar-container" *ngIf="progressData?.total > 0">
+    <span class="progress-item unassigned" [style.width.%]="progressData?.unassigned"></span>
+    <span class="progress-item weak" [style.width.%]="progressData?.weak"></span>
+    <span class="progress-item ok" [style.width.%]="progressData?.ok"></span>
+    <span class="progress-item good" [style.width.%]="progressData?.good"></span>
+    <span class="progress-item excellent" [style.width.%]="progressData?.excellent"></span>
 </div>
 
-<div class="progress-bar-detail-container">
-    <div class="detail-item unassigned"></div><Label>Unassigned</Label>
-    <div class="detail-item weak"></div><Label>Weak</Label>
-    <div class="detail-item ok"></div><Label>Ok</Label>
-    <div class="detail-item good"></div><Label>Good</Label>
-    <div class="detail-item excellent"></div><Label>Excellent</Label>
+<div class="progress-bar-detail-container" *ngIf="progressData?.total > 0">
+    <div class="detail-item unassigned"></div><Label>Unassigned ({{progressData?.unassigned}}%)</Label>
+    <div class="detail-item weak"></div><Label>Weak ({{progressData?.weak}}%)</Label>
+    <div class="detail-item ok"></div><Label>Ok ({{progressData?.ok}}%)</Label>
+    <div class="detail-item good"></div><Label>Good ({{progressData?.good}}%)</Label>
+    <div class="detail-item excellent"></div><Label>Excellent ({{progressData?.excellent}}%)</Label>
 </div>

@@ -1,19 +1,17 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
+import { ResultColorDirective } from '../../directives/result-color.directive';
 
 @Component({
   selector: 'app-search-result',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, ResultColorDirective],
   templateUrl: './search-result.component.html',
   styleUrl: './search-result.component.css'
 })
 export class SearchResultComponent {
-  tableData = [
-    { dateCompleted: new Date(), content: 'Example Content 1', type: 'Type 1', skillResult: 'Result 1', timeSpent: '1h' },
-    { dateCompleted: new Date(), content: 'Example Content 1', type: 'Type 1', skillResult: 'Result 1', timeSpent: '1h' },
-    { dateCompleted: new Date(), content: 'Example Content 1', type: 'Type 1', skillResult: 'Result 1', timeSpent: '1h' },
-    { dateCompleted: new Date(), content: 'Example Content 1', type: 'Type 1', skillResult: 'Result 1', timeSpent: '1h' },
-    { dateCompleted: new Date(), content: 'Example Content 1', type: 'Type 1', skillResult: 'Result 1', timeSpent: '1h' },
+  @Input() tableData: any = [];
 
-];
+  constructor() { }
+  
 }

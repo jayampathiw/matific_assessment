@@ -1,17 +1,18 @@
 <div class="search-container">
         <div>
             <label>Class</label><br>
-            <select class="data-dropdown" (change)="onValueChange()">
-                <option value="option1">Option 1</option>
-                <option value="option2">Option 2</option>
+            <select class="data-dropdown" (change)="onClassValueChange($event)">
+                <option value="" disabled selected>Select a Class</option>
+                <option *ngFor="let item of classData" [value]="item?.id">{{ item?.name }}</option>
             </select>
+            
         </div>
         
         <div>
             <label>Student</label><br>
-            <select class="data-dropdown" (change)="onValueChange()">
-                <option value="option1">Option 1</option>
-                <option value="option2">Option 2</option>
+            <select class="data-dropdown" (change)="onStudentValueChange($event)">
+                <option value="" disabled selected>Select a Student</option>
+                <option *ngFor="let item of studentData" [value]="item">{{ item }}</option>
             </select>
         </div>
         
@@ -19,8 +20,8 @@
         <div>
             <label>Date Range</label><br>
             <div class="datepickers">
-                <input type="date" class="date-input" (change)="onValueChange()" /> <span> To </span>
-                <input type="date" class="date-input" (change)="onValueChange()" />
+                <input type="date" class="date-input" (change)="onDateValueChange('startDate', $event)" /> <span> To </span>
+                <input type="date" class="date-input" (change)="onDateValueChange('endDate', $event)" />
             </div>
         </div>
     
