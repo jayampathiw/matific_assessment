@@ -23,9 +23,9 @@
   
     <label for="confirmPassword">Retype Password:</label><br>
     <input type="password" formControlName="confirmPassword"><br><br>
-    <!-- <div *ngIf="registerForm.errors?.mismatch && registerForm.get('confirmPassword')?.touched">
+    <div *ngIf="registerForm?.errors?.['mismatch'] && registerForm.get('confirmPassword')?.touched">
         Passwords do not match.
-      </div> -->
+      </div>
   
     <button type="submit" [disabled]="!registerForm.valid">Register</button>
   

@@ -34,9 +34,13 @@ export class AuthService {
     return JSON.parse(sessionStorage?.getItem('registeredUsers') || '[]');
   }
 
-  isUserAvailable(user: Registration): boolean {
+  logIn(user: Registration): boolean {
     let existingUsers = this.getRegisteredUsers();
     this.loggedInUser = existingUsers?.find(u => u.username === user?.username && u.password === user?.password);
+    return this.loggedInUser !== null;
+  }
+
+  isLoggedIn(): boolean {
     return this.loggedInUser !== null;
   }
 

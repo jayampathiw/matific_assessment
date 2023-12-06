@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControlOptions, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { passwordMatchValidator } from './registration.helper';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../auth.service';
@@ -15,9 +15,7 @@ export class RegistrationComponent {
 
   registerForm!: FormGroup;
 
-  constructor(private authService: AuthService){
-    
-  }
+  constructor(private authService: AuthService){ }
 
   ngOnInit() {
     this.registerForm = new FormGroup({
@@ -29,11 +27,10 @@ export class RegistrationComponent {
       username: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required]),
       confirmPassword: new FormControl('', [Validators.required])
-    });
+    }, {validators:passwordMatchValidator} as  AbstractControlOptions);
   }
 
   onSubmit() {
-    console.log('Registration Form Data:', this.registerForm.value);
     this.registerForm.valid && this.authService.storeRegisteredData(this.registerForm.value);
   }
 }
