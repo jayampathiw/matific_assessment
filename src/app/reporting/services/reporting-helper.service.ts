@@ -24,6 +24,7 @@ export class ReportingHelperService {
       unassigned: 0,
       total: 0
     };
+  classDataEmptyMessage: any = ""
 
   constructor() { }
 
@@ -124,6 +125,12 @@ export class ReportingHelperService {
       this.classActivityData = result?.map(a => {
         return { dateCompleted: a.date, content: a.content, type: a.type, skillResult: a.skill, timeSpent: a.time, mark: a.mark };
       });
+    }
+
+    if(this.classActivityData.length == 0) {
+      this.classDataEmptyMessage = `No content has been completed by ${this.selectedStudent} for ${this.startDate} to ${this.endDate}.`
+    } else {
+      this.classDataEmptyMessage = '';
     }
   }
 }

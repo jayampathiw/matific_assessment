@@ -15,8 +15,12 @@
             <td>{{ item.content }}</td>
             <td>{{ item.type }}</td>
             <td>{{ item.skillResult }}</td>
-            <td [appResultColor]="item">{{item?.mark}}%</td>
+            <td [ngStyle]="{'color': (item.mark >= 90) ? 'green' : (item.mark < 90 && item.mark >= 80) ? 'blue' : (item.mark < 80 && item.mark >= 60) ? 'yellow' : 'red'}">{{item?.mark}}%</td>
             <td>{{ item.timeSpent }}</td>
+        </tr>
+        <tr *ngIf="tableData.length === 0">
+            <td colspan="6" *ngIf="emptyMessage?.length > 0">{{emptyMessage}}/td>
+            <td colspan="6" *ngIf="emptyMessage?.length == 0">No data found</td>
         </tr>
     </tbody>
 </table>
